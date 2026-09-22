@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>龙甲 - 传统文化与高端仿古装饰材料</title>
+    <meta name="description" content="龙甲专注传统中式仿古建筑与装饰材料，提供龙甲护墙板、龙甲木雕、古建构件及中式装修解决方案。集设计、生产、施工于一体，传承非遗工艺，打造高端中式空间。">
+    <meta name="keywords" content="龙甲,仿古装饰材料,中式装修,龙甲护墙板,古建构件,传统工艺,新中式">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* 鞍褐色 */
+            --secondary-color: #D2691E; /* 巧克力色 */
+            --accent-color: #F5DEB3; /* 小麦色 */
+            --bg-color: #FAF9F6; /* 米白色 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: normal;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/longjia_arch/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            border-color: var(--white);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 2px;
+            border: 1px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* 特性/优势 */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(139, 69, 19, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* 产品展示 */
+        .products {
+            padding: 80px 0;
+        }
+
+        .product-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 30px;
+            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .learn-more {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* 关于我们 */
+        .about {
+            padding: 80px 0;
+            background-color: #f4f1ea;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .about-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .check-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        /* 常见问题 */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                flex-direction: column;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                order: -1;
+            }
+        }
+
+        /* 动画 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>龙甲</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#about">关于龙甲</a></li>
+                    <li><a href="#cases">工程案例</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">免费咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>传承东方美学，重塑古建新颜</h1>
+                <p>龙甲专注于高端中式仿古装饰材料研发与生产，从护墙板到木雕构件，为您打造兼具历史韵味与现代舒适的雅致空间。</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn-primary">浏览产品系列</a>
+                    <a href="#about" class="btn-outline">了解工艺流程</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>为什么选择龙甲</h2>
+                    <p>融合传统榫卯工艺与现代环保技术，为您提供可信赖的中式装修解决方案。</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="icon-box">★</div>
+                        <h3>纯手工雕刻</h3>
+                        <p>坚持纯手工精雕细琢，每一处纹路都蕴含匠人精神，还原古典建筑的神韵。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">🛡️</div>
+                        <h3>环保耐久</h3>
+                        <p>采用进口环保胶粘剂与天然木材，防水防潮，耐酸碱，使用寿命长达50年以上。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">🎨</div>
+                        <h3>古韵配色</h3>
+                        <p>独家调配传统矿物颜料，色泽温润如玉，历久弥新，完美适配各类装修风格。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon-box">⚙️</div>
+                        <h3>定制服务</h3>
+                        <p>提供从设计图纸到现场安装的一站式服务，满足别墅、酒店、会所等不同场景需求。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>产品中心</h2>
+                    <p>涵盖古建主材、室内装饰、园林景观三大类，满足全方位的装饰需求。</p>
+                </div>
+                
+                <div class="product-tabs">
+                    <button class="tab-btn active">全部</button>
+                    <button class="tab-btn">龙甲护墙板</button>
+                    <button class="tab-btn">古建木雕</button>
+                    <button class="tab-btn">实木花格</button>
+                    <button class="tab-btn">中式门窗</button>
+                </div>
+
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/longjia_board/400/300.jpg" alt="龙甲浮雕护墙板">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">护墙板系列</span>
+                            <h3 class="product-title">龙甲浮雕护墙板</h3>
+                            <p class="product-desc">采用优质实木多层板，表面经高温烤漆处理，浮雕工艺细腻逼真，隔音保暖效果显著。</p>
+                            <div class="product-footer">
+                                <span class="price">面议</span>
+                                <a href="#" class="learn-more">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/longjia_carving/400/300.jpg" alt="龙甲木雕挂件">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">木雕系列</span>
+                            <h3 class="product-title">宫廷风格木雕挂件</h3>
+                            <p class="product-desc">手工精雕龙凤呈祥、福禄寿喜等传统图案，适用于客厅背景墙、餐厅吊顶等装饰。</p>
+                            <div class="product-footer">
+                                <span class="price">面议</span>
+                                <a href="#" class="learn-more">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://picsum.photos/seed/longjia_grid/400/300.jpg" alt="龙甲实木花格">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">花格系列</span>
+                            <h3 class="product-title">落地实木花格窗</h3>
+                            <p class="product-desc">结构严谨，榫卯连接，兼具采光与遮挡功能，是隔断、屏风及园林建筑的理想选择。</p>
+                            <div class="product-footer">
+                                <span class="price">面议</span>
+                                <a href="#" class="learn-more">查看详情 &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>匠心传承，专注古建</h2>
+                        <p>龙甲品牌起源于对传统中式建筑文化的深刻理解与热爱。我们致力于将古老的建筑智慧与现代家居生活相结合，通过创新的材料工艺，让传统装饰在现代空间中焕发新生。</p>
+                        <p>从原木甄选到成品出厂，我们严格控制每一个生产环节，确保每一件“龙甲”产品都经得起时间的考验。</p>
+                        <ul class="about-list">
+                            <li><span class="check-icon">✓</span> 20年专注仿古建材研发经验</li>
+                            <li><span class="check-icon">✓</span> ISO9001质量管理体系认证</li>
+                            <li><span class="check-icon">✓</span> 免费提供中式装修设计咨询</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/longjia_workshop/600/400.jpg" alt="龙甲生产车间">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题</h2>
+                    <p>关于龙甲产品选购与安装的疑问解答。</p>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            龙甲护墙板适合安装在哪些环境？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>龙甲护墙板适用于家庭客厅、卧室、别墅玄关、酒店大堂、茶楼会所以及中式餐厅等需要提升文化氛围的室内空间。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            产品的环保标准是什么？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>我们的产品严格执行国家E0级环保标准，所有胶粘剂和油漆均选用无毒无害的环保材料，确保室内空气质量安全。</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            是否支持异地定制？
+                            <span class="faq-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>当然支持。龙甲提供全国范围的定制服务，您只需提供尺寸图纸或现场勘测，我们将安排专业团队为您制作并安装。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于龙甲</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">传承中华传统建筑美学，为您提供高品质的仿古装饰材料与一站式装修服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="#">龙甲护墙板</a></li>
+                        <li><a href="#">古建木雕</a></li>
+                        <li><a href="#">实木花格</a></li>
+                        <li><a href="#">中式门窗</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">工程案例</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">加盟合作</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-888-6666</li>
+                        <li>邮箱：info@longjia.com</li>
+                        <li>地址：中国·XX省XX市古建产业园A栋</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 龙甲装饰材料有限公司 版权所有 | 保留所有权利</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ手风琴交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项状态
+                    item.classList.toggle('active');
+                });
+            });
+
+            // 导航栏平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+          </html>

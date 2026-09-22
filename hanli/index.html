@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩力 - 专业健身教练与运动康复专家，提供科学健身指导、减脂增肌方案及营养饮食建议，帮助您安全高效达成健康目标。">
+    <meta name="keywords" content="韩力,健身教练,运动康复,科学健身,减脂增肌">
+    <title>韩力 - 科学健身指导与运动康复专家平台</title>
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --secondary-color: #1d3557;
+            --accent-color: #457b9d;
+            --bg-light: #f1faee;
+            --bg-white: #ffffff;
+            --text-main: #2b2d42;
+            --text-light: #8d99ae;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #d62828;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--secondary-color);
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--bg-white);
+            padding: 40px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Grid */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Feature Card */
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            background-color: rgba(230, 57, 70, 0.1);
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            align-self: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Guide Section (Two Columns) */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .guide-list li {
+            background: var(--bg-white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .guide-icon {
+            background-color: var(--bg-light);
+            color: var(--accent-color);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .guide-content h4 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .guide-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .sidebar-box {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .sidebar-box h3 {
+            margin-bottom: 15px;
+        }
+
+        .sidebar-box p {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-white);
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 15px;
+            color: var(--text-light);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1b262c;
+            color: #a8dadc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">韩<span>力</span>健身</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#guides">训练指南</a></li>
+                    <li><a href="#services">专业服务</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">预约咨询</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>科学健身，重塑自我</h1>
+            <p>韩力教练团队致力于提供基于运动生理学与营养学的个性化指导，帮助您突破瓶颈，安全、高效地达成健身目标。</p>
+            <div class="hero-buttons">
+                <a href="#guides" class="cta-btn">开始我的计划</a>
+                <a href="#about" class="btn-outline">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>5000+</h3>
+                <p>服务学员</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>好评率</p>
+            </div>
+            <div class="stat-item">
+                <h3>10年</h3>
+                <p>行业经验</p>
+            </div>
+            <div class="stat-item">
+                <h3>100+</h3>
+                <p>成功案例</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container content-section">
+        
+        <!-- Intro Section -->
+        <section id="about" style="margin-bottom: 60px; text-align: center;">
+            <h2 style="color: var(--secondary-color); margin-bottom: 15px;">关于韩力健身</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: var(--text-light);">
+                韩力健身专注于为都市人群提供专业的运动康复与体能提升方案。我们摒弃盲目训练，强调动作标准性与功能性，通过数据化监测与反馈，确保每一次锻炼都有效果。
+            </p>
+        </section>
+
+        <!-- Core Services Grid -->
+        <section id="services">
+            <div class="section-header">
+                <h2>核心服务体系</h2>
+                <p>全方位覆盖您的健康需求</p>
+            </div>
+            <div class="grid-layout">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/fitness1/400/300" alt="私人定制训练">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">私教课程</span>
+                        <h3 class="card-title">1对1 私人定制</h3>
+                        <p class="card-text">根据您的身体数据、生活习惯及目标，量身定制专属训练计划，全程动作纠正与营养建议。</p>
+                        <a href="#" class="card-link">了解详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/fitness2/400/300" alt="运动康复">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">康复理疗</span>
+                        <h3 class="card-title">运动损伤康复</h3>
+                        <p class="card-text">针对肩颈腰痛、运动损伤及体态矫正提供专业康复方案，恢复身体机能，预防二次受伤。</p>
+                        <a href="#" class="card-link">了解详情 &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/fitness3/400/300" alt="减脂增肌">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">综合提升</span>
+                        <h3 class="card-title">减脂与增肌计划</h3>
+                        <p class="card-text">科学饮食控制结合高强度间歇训练（HIIT）或力量训练，快速燃烧脂肪，雕刻肌肉线条。</p>
+                        <a href="#" class="card-link">了解详情 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Training Guides -->
+        <section id="guides" style="margin-top: 80px;">
+            <div class="section-header">
+                <h2>科学训练指南</h2>
+                <p>掌握正确的健身原理与方法</p>
+            </div>
+            
+            <div class="guide-container">
+                <div class="guide-list">
+                    <ul>
+                        <li>
+                            <div class="guide-icon">1</div>
+                            <div class="guide-content">
+                                <h4>建立正确的动作模式</h4>
+                                <p>在开始增肌或减脂之前，必须先掌握深蹲、硬拉、卧推等基础动作的标准模式，确保发力链条正确。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="guide-icon">2</div>
+                            <div class="guide-content">
+                                <h4>循序渐进的负荷原则</h4>
+                                <p>遵循超负荷原则，随着力量增长逐渐增加重量或次数。切忌急于求成，避免肌肉拉伤。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="guide-icon">3</div>
+                            <div class="guide-content">
+                                <h4>营养是训练的基础</h4>
+                                <p>三分练，七分吃。合理的蛋白质摄入、碳水化合物补充以及充足的水分，是恢复体力的关键。</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="guide-icon">4</div>
+                            <div class="guide-content">
+                                <h4>睡眠与恢复</h4>
+                                <p>肌肉主要在睡眠中生长。保证每晚7-8小时的高质量睡眠，有助于生长激素的分泌。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <aside class="sidebar-box">
+                    <h3>新手入门礼包</h3>
+                    <p>如果您是健身新手，不知道从何开始？点击下方按钮获取免费的《7天家庭训练计划》电子书。</p>
+                    <a href="#" class="cta-btn" style="background-color: white; color: var(--secondary-color);">免费领取</a>
+                    <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
+                        <p>✔ 无需器械</p>
+                        <p>✔ 适合初学者</p>
+                        <p>✔ 视频演示</p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item active">
+                    <div class="faq-question">韩力教练适合什么人群？ <span>+</span></div>
+                    <div class="faq-answer">
+                        韩力健身课程适合所有希望改善体质、减脂塑形、增强肌肉力量的人群，特别是久坐办公族、产后恢复女性及运动损伤康复人群。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">第一次训练需要准备什么？ <span>+</span></div>
+                    <div class="faq-answer">
+                        您只需穿着舒适的运动服和运动鞋。韩力教练会携带专业的训练垫、弹力带等辅助工具。如有旧伤，请提前告知教练。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">多久能看到明显效果？ <span>+</span></div>
+                    <div class="faq-answer">
+                        健身是一个长期积累的过程。通常坚持科学训练和合理饮食，4-6周后体能会有明显提升，3个月可见形体变化。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>韩力健身</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8; opacity: 0.8;">
+                        专注于科学健身与运动康复，用专业的知识改变您的生活。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">教练团队</a></li>
+                        <li><a href="#">课程价格</a></li>
+                        <li><a href="#">学员案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：contact@hanlifitness.com</li>
+                        <li>地址：北京市朝阳区健身大道88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 韩力健身服务平台 版权所有
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                // Close others
+                document.querySelectorAll('.faq-item').forEach(child => {
+                    if (child !== parent) {
+                        child.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

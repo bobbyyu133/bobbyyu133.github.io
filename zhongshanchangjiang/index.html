@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="中山长江水世界官网，提供最新园区开放时间、票务价格、游乐项目介绍及游玩攻略。畅玩超大型水上乐园，体验刺激滑道与清凉夏日。">
+    <meta name="keywords" content="中山长江水世界, 水上乐园, 票价, 开放时间, 游玩攻略">
+    <title>中山长江水世界-畅玩水上乐园与暑期游玩攻略</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-blue: #0077be;
+            --secondary-blue: #00a8e8;
+            --accent-yellow: #f1c40f;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f9fc;
+            --white: #ffffff;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --container-width: 1200px;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 119, 190, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: 2px solid var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-blue);
+            border-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: var(--spacing-md);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://picsum.photos/seed/waterpark/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: var(--spacing-lg);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+        }
+
+        /* Info Bar */
+        .info-bar {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: var(--spacing-md) 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            text-align: center;
+        }
+
+        .info-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .info-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Attractions */
+        .attractions {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--bg-light);
+        }
+
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+
+        .card-body {
+            padding: var(--spacing-md);
+        }
+
+        .card-tag {
+            display: inline-block;
+            background-color: rgba(0, 119, 190, 0.1);
+            color: var(--primary-blue);
+            font-size: 0.75rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        /* Tickets Section */
+        .tickets {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .ticket-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-lg);
+        }
+
+        .ticket-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--radius);
+            padding: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+        }
+
+        .ticket-card.featured {
+            border: 2px solid var(--primary-blue);
+            background: linear-gradient(to bottom right, #ffffff, #f0f8ff);
+        }
+
+        .ticket-card.featured::before {
+            content: "最受欢迎";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .ticket-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: var(--spacing-md) 0;
+        }
+
+        .ticket-price small {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .ticket-features {
+            margin-bottom: var(--spacing-lg);
+            text-align: left;
+        }
+
+        .ticket-features li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .ticket-features li::before {
+            content: "✔";
+            color: var(--primary-blue);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Tips & Guide */
+        .tips {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--bg-light);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .tip-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-item h3::before {
+            content: "💧";
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        .checklist li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .checklist li::before {
+            content: "•";
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #b0b0b0;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: var(--spacing-md);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.35 0-6-2.57-6-6.2 0-2.34 1.95-5.44 6-9.14 4.05 3.7 6 6.79 6 9.14 0 3.63-2.65 6.2-6 6.2z"/>
+                </svg>
+                <span>长江水世界</span>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links" id="navLinks">
+                <a href="#attractions">游乐项目</a>
+                <a href="#tickets">票务预订</a>
+                <a href="#guide">游玩指南</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+            <div class="header-actions">
+                <a href="#tickets" class="btn btn-primary">立即购票</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>中山长江水世界</h1>
+            <p>珠三角大型水上乐园，体验超刺激的造浪池与滑道，享受清凉一夏的完美度假时光。</p>
+            <div class="hero-buttons">
+                <a href="#tickets" class="btn btn-primary">查看票价</a>
+                <a href="#guide" class="btn btn-outline">游玩攻略</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-bar">
+        <div class="container info-grid">
+            <div class="info-item">
+                <h3>营业时间</h3>
+                <p>09:00 - 18:00</p>
+            </div>
+            <div class="info-item">
+                <h3>建议游玩时长</h3>
+                <p>6 - 8 小时</p>
+            </div>
+            <div class="info-item">
+                <h3>园区地址</h3>
+                <p>广东省中山市火炬开发区</p>
+            </div>
+            <div class="info-item">
+                <h3>咨询电话</h3>
+                <p>0760-12345678</p>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="attractions container" id="attractions">
+            <div class="section-title">
+                <h2>热门游乐项目</h2>
+                <p>从家庭亲子到极限挑战，总有一款适合你</p>
+            </div>
+            <div class="attraction-grid">
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/slide1/400/300.jpg" alt="超级大喇叭">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">极限挑战</span>
+                        <h3 class="card-title">超级大喇叭</h3>
+                        <p class="card-desc">体验从高空滑入巨大喇叭口的失重感，感受心跳加速的瞬间。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/wave/400/300.jpg" alt="造浪池">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">家庭必玩</span>
+                        <h3 class="card-title">欢乐造浪池</h3>
+                        <p class="card-desc">模拟真实海浪，每15分钟一次人工造浪，适合所有年龄段。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/river/400/300.jpg" alt="漂流河">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">悠闲休闲</span>
+                        <h3 class="card-title">环园漂流河</h3>
+                        <p class="card-desc">全长1.5公里的漂流河，在清凉水中缓缓前行，欣赏沿途风景。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img">
+                        <img src="https://picsum.photos/seed/kids/400/300.jpg" alt="儿童戏水区">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">亲子专区</span>
+                        <h3 class="card-title">童梦水寨</h3>
+                        <p class="card-desc">专为儿童设计的浅水区，拥有滑梯和喷水装置，安全又有趣。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="tickets container" id="tickets">
+            <div class="section-title">
+                <h2>票务预订</h2>
+                <p>选择最适合您的入园方案，提前购票更优惠</p>
+            </div>
+            <div class="ticket-container">
+                <div class="ticket-card">
+                    <h3>平日票</h3>
+                    <div class="ticket-price">¥168<small>/张</small></div>
+                    <ul class="ticket-features">
+                        <li>全天无限次入园</li>
+                        <li>享受所有游乐项目</li>
+                        <li>免费存包服务</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="color:var(--text-dark); border-color:var(--text-dark);">预订平日票</a>
+                </div>
+
+                <div class="ticket-card featured">
+                    <h3>周末及节假日票</h3>
+                    <div class="ticket-price">¥198<small>/张</small></div>
+                    <ul class="ticket-features">
+                        <li>全天无限次入园</li>
+                        <li>享受所有游乐项目</li>
+                        <li>免费存包服务</li>
+                        <li>赠送园区精美水杯</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">立即抢购</a>
+                </div>
+
+                <div class="ticket-card">
+                    <h3>儿童票</h3>
+                    <div class="ticket-price">¥98<small>/张</small></div>
+                    <ul class="ticket-features">
+                        <li>1.2米以下儿童免票</li>
+                        <li>1.2米-1.5米适用</li>
+                        <li>需成人陪同入园</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline" style="color:var(--text-dark); border-color:var(--text-dark);">预订儿童票</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="tips container" id="guide">
+            <div class="section-title">
+                <h2>游玩指南</h2>
+                <p>为了让您的旅程更加顺利，请阅读以下温馨提示</p>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <h3>入园须知</h3>
+                    <ul class="checklist">
+                        <li>请务必携带本人有效身份证件原件入园。</li>
+                        <li>园区内禁止携带易燃、易爆、管制刀具等危险物品。</li>
+                        <li>为了安全，患有心脏病、高血压等不适宜剧烈运动的人群请谨慎参与。</li>
+                        <li>禁止在非游泳区戏水，请遵守救生员指挥。</li>
+                    </ul>
+                </div>
+                <div class="tip-item">
+                    <h3>装备建议</h3>
+                    <ul class="checklist">
+                        <li>建议穿着泳衣和防滑拖鞋，携带泳镜和泳帽。</li>
+                        <li>园区提供储物柜租赁服务，建议提前租赁。</li>
+                        <li>夏季紫外线强烈，请做好防晒措施（防晒霜、帽子、墨镜）。</li>
+                        <li>由于园区面积较大，建议穿着舒适的平底凉鞋。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p>中山长江水世界位于风景秀丽的火炬开发区，是珠三角地区集娱乐、休闲、运动于一体的现代化水上乐园。我们致力于为游客提供安全、欢乐的夏日体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#attractions">游乐项目</a></li>
+                        <li><a href="#tickets">在线购票</a></li>
+                        <li><a href="#">园区地图</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：0760-12345678</li>
+                        <li>地址：中山市火炬开发区</li>
+                        <li>邮箱：info@changjiangwaterpark.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 中山长江水世界 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // 移动端点击后关闭菜单
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
